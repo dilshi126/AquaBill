@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/constants/colors.dart';
 import 'package:flutter_auth/constants/description.dart';
+import 'package:flutter_auth/screens/home/home.dart';
 import '../../constants/styles.dart';
 import '../../services/auth.dart';
 
@@ -111,14 +112,21 @@ class _SignInState extends State<SignIn> {
 
                       // Login button (moved here)
                       GestureDetector(
+                        // Login button onTap function
                         onTap: () async {
                           dynamic result = await _auth.signInUsingEmailAndPassword(email, password);
-                          if (result == null) {
+                          if (result != null) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) => const Home()), // Redirect to Home
+                            );
+                          } else {
                             setState(() {
                               error = "Could not sign in with those credentials";
                             });
                           }
                         },
+
                         child: Container(
                           height: 40,
                           width: 200,

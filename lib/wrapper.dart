@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/models/UserModel.dart';
-import 'package:flutter_auth/screens/authentication/authenticate.dart';
-import 'package:flutter_auth/screens/home/home.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_auth/models/UserModel.dart';
+import 'package:flutter_auth/screens/home/home.dart';
+import 'package:flutter_auth/screens/authentication/authenticate.dart';
 
 class Wrapper extends StatelessWidget {
-  const Wrapper({super.key});
-
   @override
   Widget build(BuildContext context) {
-    //the user data that the provider proides this can be a user data or can be null.
     final user = Provider.of<UserModel?>(context);
 
+    // Redirect based on the authentication state
     if (user == null) {
-      return Authenticate();
+      return const Authenticate();
     } else {
-      return Home();
+      return const Home();
     }
   }
 }

@@ -3,6 +3,7 @@ import '../../constants/colors.dart';
 import '../../constants/description.dart';
 import '../../constants/styles.dart';
 import '../../services/auth.dart';
+import 'package:flutter_auth/screens/home/home.dart';
 
 class Register extends StatefulWidget {
   final Function toggle;
@@ -283,16 +284,23 @@ class _RegisterState extends State<Register> {
 
                       // Register button
                       GestureDetector(
+                        // Register button onTap function
                         onTap: () async {
                           if (_formKey.currentState!.validate()) {
                             dynamic result = await _auth.registerWithEmailAndPassword(email, password);
-                            if (result == null) {
+                            if (result != null) {
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(builder: (context) => const Home()), // Redirect to Home
+                              );
+                            } else {
                               setState(() {
                                 error = "Please enter a valid email!";
                               });
                             }
                           }
                         },
+
                         child: Container(
                           height: 40,
                           width: 200,
