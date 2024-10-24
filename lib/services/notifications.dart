@@ -8,6 +8,7 @@ class NotificationsService {
     FirebaseMessaging.onMessage.listen((message) {
       // Handle foreground messages
       print('New notification: ${message.notification?.title}');
+      print("change");
     });
   }
 }
