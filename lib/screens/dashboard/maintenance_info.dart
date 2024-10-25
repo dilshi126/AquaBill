@@ -9,7 +9,7 @@ class MaintenanceInfo extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Scheduled Maintenance'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('View all scheduled maintenance here.'),
       ),
     );

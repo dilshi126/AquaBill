@@ -5,6 +5,8 @@ import 'package:flutter_auth/screens/home/home.dart';
 import 'package:flutter_auth/screens/authentication/authenticate.dart';
 
 class Wrapper extends StatelessWidget {
+  const Wrapper({super.key});
+
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserModel?>(context);

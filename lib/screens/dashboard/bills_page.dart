@@ -15,7 +15,7 @@ class BillsPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text('Bill for Month ${index + 1}'),
-            subtitle: Text('Amount: \$100'),
+            subtitle: const Text('Amount: \$100'),
             trailing: IconButton(
               icon: const Icon(Icons.payment),
               onPressed: () {

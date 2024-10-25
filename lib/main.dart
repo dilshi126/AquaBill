@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         // Redirect to the dashboard based on authentication status
-        home: Wrapper(), // Wrapper determines if the user goes to login or dashboard
+        home: const Wrapper(), // Wrapper determines if the user goes to login or dashboard
         routes: {
           '/dashboard': (context) => const CustomerDashboard(), // Route to Customer Dashboard
         },

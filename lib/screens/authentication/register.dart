@@ -210,7 +210,7 @@ class _RegisterState extends State<Register> {
                         items: provinces.map((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
-                            child: Text(value, style: TextStyle(color: Colors.black)),
+                            child: Text(value, style: const TextStyle(color: Colors.black)),
                           );
                         }).toList(),
                         onChanged: (val) {
@@ -258,7 +258,7 @@ class _RegisterState extends State<Register> {
                       // Password strength indicator
                       Text(
                         "Password Strength: ${measurePasswordStrength(password)}",
-                        style: TextStyle(color: Colors.yellowAccent),
+                        style: const TextStyle(color: Colors.yellowAccent),
                       ),
                       const SizedBox(height: 20),
 

@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
           actions: [
             ElevatedButton(
               style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(bgBlack),
+                backgroundColor: WidgetStatePropertyAll(bgBlack),
               ),
               onPressed: () async {
                 await _auth.signOut();
@@ -35,7 +35,7 @@ class _HomeState extends State<Home> {
           ],
         ),
         body: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: Center(
             child: Column(
               children: [

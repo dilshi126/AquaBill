@@ -20,9 +20,9 @@ class AreaOfficerDashboard extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: [
-            _dashboardTile(context, 'View Complaints', Icons.report, ViewComplaintsOfficerPage()),
-            _dashboardTile(context, 'Add Meter Reader', Icons.person_add, AddMeterReaderPage()),
-            _dashboardTile(context, 'Notify Maintenance', Icons.build, NotifyMaintenancePage()),
+            _dashboardTile(context, 'View Complaints', Icons.report, const ViewComplaintsOfficerPage()),
+            _dashboardTile(context, 'Add Meter Reader', Icons.person_add, const AddMeterReaderPage()),
+            _dashboardTile(context, 'Notify Maintenance', Icons.build, const NotifyMaintenancePage()),
           ],
         ),
       ),

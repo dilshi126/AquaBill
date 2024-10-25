@@ -20,9 +20,9 @@ class MeterReaderDashboard extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: [
-            _dashboardTile(context, 'Upload Meter Reading', Icons.camera, UploadMeterReadingPage()),
-            _dashboardTile(context, 'View Non-Registered Customers', Icons.visibility, ViewNonRegisteredCustomersPage()),
-            _dashboardTile(context, 'Change Password', Icons.password, ChangePasswordPage()),
+            _dashboardTile(context, 'Upload Meter Reading', Icons.camera, const UploadMeterReadingPage()),
+            _dashboardTile(context, 'View Non-Registered Customers', Icons.visibility, const ViewNonRegisteredCustomersPage()),
+            _dashboardTile(context, 'Change Password', Icons.password, const ChangePasswordPage()),
           ],
         ),
       ),
