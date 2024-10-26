@@ -22,7 +22,21 @@ class AuthServices {
         password: password,
       );
       User? user = result.user;
+      if (user != null && !user.emailVerified) {
+        await user.sendEmailVerification(); // Optional: resend verification email
+        print('Email not verified. Verification email sent again to ${user.email}.');
+        return null;
+      }
+
       return _userFromFirebaseUser(user);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided.');
+      }
+      return null;
+
     } catch (e) {
       print(e.toString());
       return null;
